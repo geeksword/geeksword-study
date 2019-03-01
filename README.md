@@ -1,2 +1,2 @@
 # geeksword-study
-geeksword成员学习进度
+lx的学习进度
