@@ -1,0 +1,30 @@
+###表单上传
+POST 127.0.0.1:8090/ HTTP/1.0
+Content-Type: application/x-www-form-urlencoded
+
+name=zhoulinshun&age=18
+
+###文件上传
+POST 127.0.0.1:8090 HTTP/1.1
+Content-Type: multipart/form-data
+
+< ./学习内容.md
+
+###表单加文件上传
+POST  127.0.0.1:8090/ HTTP/1.0
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+-----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name"
+
+zhoulinshun
+-----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="age"
+Content-Type: text/plain
+
+18
+-----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="学习内容.md"
+
+< ./学习内容.md
+-----WebKitFormBoundary7MA4YWxkTrZu0gW--
